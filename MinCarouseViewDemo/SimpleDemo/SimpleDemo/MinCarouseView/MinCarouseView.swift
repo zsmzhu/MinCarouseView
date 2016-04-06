@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MinCarouseView: UIView {
+public final class MinCarouseView: UIView {
     
-    typealias TapClosure = (index: Int) -> Void
+    public typealias TapClosure = (index: Int) -> Void
     
     //MARK: Enum
     enum Direction: Int {
@@ -125,51 +125,51 @@ class MinCarouseView: UIView {
     
     //MARK: Public Property
     /// 图片数组，接收UIImage或者String(网络地址)
-    var imageArray = [AnyObject]() {
+    public var imageArray = [AnyObject]() {
         didSet {
             imagesHandle(imageArray)
             updateUI()
         }
     }
     /// 是否开启自动滚动，默认true
-    var isAutoScroll = true {
+    public var isAutoScroll = true {
         didSet {
             resetTimer()
         }
     }
     /// 自动滚动间隔时间，默认3秒
-    var scrollInterVal: Double = 3.0 {
+    public var scrollInterVal: Double = 3.0 {
         didSet {
             resetTimer()
         }
     }
     
     /// 设置pageControl当前圆点颜色
-    @IBInspectable var currentPageDotColor: UIColor = Constant.currentPageDotColor {
+    @IBInspectable public var currentPageDotColor: UIColor = Constant.currentPageDotColor {
         didSet {
             pageControl.currentPageIndicatorTintColor = currentPageDotColor
         }
     }
     /// 设置pageControl其他圆点颜色
-    @IBInspectable var otherPageDotColor: UIColor = Constant.otherPageDotColor {
+    @IBInspectable public var otherPageDotColor: UIColor = Constant.otherPageDotColor {
         didSet {
             pageControl.pageIndicatorTintColor = otherPageDotColor
         }
     }
     
     /// 点击闭包
-    var tapClosure: TapClosure?
+    public var tapClosure: TapClosure?
 
     //MARK: Lift Cycle
-    init() {
+    public init() {
         super.init(frame: CGRectZero)
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    convenience init(frame: CGRect, imageArray: [AnyObject], placeholder: UIImage) {
+    convenience public init(frame: CGRect, imageArray: [AnyObject], placeholder: UIImage) {
         self.init(frame: frame)
         self.placeholderImage = placeholder
         self.imageArray = imageArray
@@ -178,11 +178,11 @@ class MinCarouseView: UIView {
         resetTimer()
     }
     
-    convenience init(frame: CGRect, imageArray: [AnyObject]) {
+    convenience public init(frame: CGRect, imageArray: [AnyObject]) {
         self.init(frame: frame, imageArray: imageArray, placeholder: UIImage(named: "placeholder")!)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addSubview(baseView)
         resetTimer()
@@ -193,7 +193,7 @@ class MinCarouseView: UIView {
         print(__FUNCTION__)
     }
 
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         updateUI()
     }
@@ -328,24 +328,24 @@ class MinCarouseView: UIView {
 
 //MARK: UIScrollViewDelegate
 extension MinCarouseView: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    public func scrollViewDidScroll(scrollView: UIScrollView) {
         // 确定滑动方向
         direction = scrollView.contentOffset.x > width ? .Right : .Left
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         scrollEnd()
     }
     
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+    public func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
         scrollEnd()
     }
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         timer.invalidate()
     }
     
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         resetTimer()
     }
     
