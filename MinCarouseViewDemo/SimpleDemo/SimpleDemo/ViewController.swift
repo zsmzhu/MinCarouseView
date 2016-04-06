@@ -33,7 +33,7 @@ class ViewController: UIViewController {
             y: carouse1.frame.height + 20.0,
             width: UIScreen.mainScreen().bounds.width - 40.0,
             height: 200.0)
-        let carouse2 = MinCarouseView(frame: carouse2Frame, imageArray: urlArray)
+        let carouse2 = MinCarouseView(frame: carouse2Frame, imageArray: urlArray, placeholder: UIImage(named: "placeholder")!)
         self.view.addSubview(carouse2)
         carouse2.scrollInterVal = 2.0
         carouse2.tapClosure = { index in

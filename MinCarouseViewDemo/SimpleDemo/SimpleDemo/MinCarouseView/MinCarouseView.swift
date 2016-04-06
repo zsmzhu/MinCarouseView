@@ -95,7 +95,7 @@ public final class MinCarouseView: UIView {
     private var nextIndex: Int = 0
     private var images = [UIImage]()
     /// 占位图片
-    private var placeholderImage = UIImage(named: "placeholder")!
+    private var placeholderImage: UIImage?
     private var direction = Direction.None {
         //监听
         didSet {
@@ -169,7 +169,7 @@ public final class MinCarouseView: UIView {
         super.init(frame: frame)
     }
     
-    convenience public init(frame: CGRect, imageArray: [AnyObject], placeholder: UIImage) {
+    convenience public init(frame: CGRect, imageArray: [AnyObject], placeholder: UIImage?) {
         self.init(frame: frame)
         self.placeholderImage = placeholder
         self.imageArray = imageArray
@@ -179,7 +179,7 @@ public final class MinCarouseView: UIView {
     }
     
     convenience public init(frame: CGRect, imageArray: [AnyObject]) {
-        self.init(frame: frame, imageArray: imageArray, placeholder: UIImage(named: "placeholder")!)
+        self.init(frame: frame, imageArray: imageArray, placeholder: nil)
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -240,7 +240,9 @@ public final class MinCarouseView: UIView {
                 images.append(tempVlaue)
             } else {// 下载路径
                 // 先添加占位图片
-                images.append(placeholderImage)
+                if let temp = placeholderImage {
+                    images.append(temp)
+                }
                 // 下载图片
                 downLoadImages(index)
             }
@@ -256,7 +258,8 @@ public final class MinCarouseView: UIView {
         if let key = imageArray[index] as? String {
             // 缓存中有图片
             if let image = imageDict[key] {
-                images[index] = image
+                images.removeAtIndex(index)
+                images.insert(image, atIndex: index)
             }
             else {
                 // 获取沙盒路径
@@ -266,7 +269,8 @@ public final class MinCarouseView: UIView {
                         // 沙盒中有图片，替换占位图片并添加到缓存字典中
                         if let tempImageData = NSData(contentsOfFile: imagePath) {
                             if let image = UIImage(data: tempImageData) {
-                                images[index] = image
+                                images.removeAtIndex(index)
+                                images.insert(image, atIndex: index)
                                 imageDict[key] = image
                             }
                         } else { // 沙盒中无图片，下载
@@ -280,7 +284,8 @@ public final class MinCarouseView: UIView {
                                         if let imageData = downloadData {// 下载完成
                                             if let image = UIImage(data: imageData) {
                                                 self.imageDict[key] = image
-                                                self.images[index] = image
+                                                self.images.removeAtIndex(index)
+                                                self.images.insert(image, atIndex: index)
                                                 if self.imageArray.count == 1 || self.currentIndex == index {
                                                     // 主线程修改图片
                                                     self.currentImageView.performSelectorOnMainThread("setImage:", withObject: image, waitUntilDone: false)

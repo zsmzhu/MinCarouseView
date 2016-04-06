@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   s.source_files  = 'MinCarouseView/**/*.{swift}'
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.resources = "MinCarouseView/*.png"
+  #s.resources = "MinCarouseView/*.png"
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.frameworks = 'Foundation', 'UIKit'

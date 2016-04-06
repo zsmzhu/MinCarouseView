@@ -15,10 +15,10 @@
 		6B100D2D1CB4F7AC00FA74A2 /* SimpleDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B100D2C1CB4F7AC00FA74A2 /* SimpleDemoTests.swift */; };
 		6B100D381CB4F7AC00FA74A2 /* SimpleDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B100D371CB4F7AC00FA74A2 /* SimpleDemoUITests.swift */; };
 		6B100D481CB4F7C900FA74A2 /* MinCarouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B100D461CB4F7C900FA74A2 /* MinCarouseView.swift */; };
-		6B100D491CB4F7C900FA74A2 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B100D471CB4F7C900FA74A2 /* placeholder@2x.png */; };
 		6B100D541CB503EF00FA74A2 /* bamboo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B100D511CB503EF00FA74A2 /* bamboo.png */; };
 		6B100D551CB503EF00FA74A2 /* lotus.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B100D521CB503EF00FA74A2 /* lotus.png */; };
 		6B100D561CB503EF00FA74A2 /* plum blossom.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B100D531CB503EF00FA74A2 /* plum blossom.png */; };
+		6B2ACC511CB538B800095339 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B2ACC501CB538B800095339 /* placeholder@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +53,10 @@
 		6B100D371CB4F7AC00FA74A2 /* SimpleDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDemoUITests.swift; sourceTree = "<group>"; };
 		6B100D391CB4F7AC00FA74A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B100D461CB4F7C900FA74A2 /* MinCarouseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinCarouseView.swift; sourceTree = "<group>"; };
-		6B100D471CB4F7C900FA74A2 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
 		6B100D511CB503EF00FA74A2 /* bamboo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bamboo.png; sourceTree = "<group>"; };
 		6B100D521CB503EF00FA74A2 /* lotus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lotus.png; sourceTree = "<group>"; };
 		6B100D531CB503EF00FA74A2 /* plum blossom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plum blossom.png"; sourceTree = "<group>"; };
+		6B2ACC501CB538B800095339 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				6B100D461CB4F7C900FA74A2 /* MinCarouseView.swift */,
-				6B100D471CB4F7C900FA74A2 /* placeholder@2x.png */,
 			);
 			path = MinCarouseView;
 			sourceTree = "<group>";
@@ -149,6 +148,7 @@
 		6B100D4A1CB4FA2E00FA74A2 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				6B2ACC501CB538B800095339 /* placeholder@2x.png */,
 				6B100D511CB503EF00FA74A2 /* bamboo.png */,
 				6B100D521CB503EF00FA74A2 /* lotus.png */,
 				6B100D531CB503EF00FA74A2 /* plum blossom.png */,
@@ -262,8 +262,8 @@
 			files = (
 				6B100D221CB4F7AC00FA74A2 /* LaunchScreen.storyboard in Resources */,
 				6B100D551CB503EF00FA74A2 /* lotus.png in Resources */,
+				6B2ACC511CB538B800095339 /* placeholder@2x.png in Resources */,
 				6B100D1F1CB4F7AC00FA74A2 /* Assets.xcassets in Resources */,
-				6B100D491CB4F7C900FA74A2 /* placeholder@2x.png in Resources */,
 				6B100D1D1CB4F7AC00FA74A2 /* Main.storyboard in Resources */,
 				6B100D541CB503EF00FA74A2 /* bamboo.png in Resources */,
 				6B100D561CB503EF00FA74A2 /* plum blossom.png in Resources */,
