@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "MinCarouseView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "A image carouse View with swift."
   s.description  = <<-DESC
   					         swift版本，图片轮播器, 可以缓存网络图片、支持自动滚动, 需要iOS8.0以上版本
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.platform       = :ios, "8.0"
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source       = { :git => "https://github.com/zsmzhu/MinCarouseView.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/zsmzhu/MinCarouseView.git", :tag => "1.0.1" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.source_files  = 'MinCarouseView/**/*.{swift}'
